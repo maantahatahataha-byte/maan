@@ -1,0 +1,1306 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>دعوة تخرج ملكية | معن طه العيساوي - جامعة المشرق الأهلية</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts: Amiri, Aref Ruqaa, Cairo & Tajawal -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400;1,700&family=Aref+Ruqaa:wght@400;700&family=Cairo:wght@300;400;600;700;800;900&family=Tajawal:wght@400;500;700;800&display=swap" rel="stylesheet">
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <!-- Canvas Confetti -->
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        royal: {
+                            950: '#040814',
+                            900: '#060d1f',
+                            800: '#0f1f44',
+                            700: '#192f61',
+                        },
+                        gold: {
+                            100: '#fffbeb',
+                            200: '#f5d77f',
+                            300: '#e8c052',
+                            400: '#d4af37',
+                            500: '#b88b24',
+                            600: '#8f6916',
+                        },
+                        ivory: '#fdfaf2',
+                        burgundy: '#4d1124'
+                    },
+                    fontFamily: {
+                        sans: ['Cairo', 'Tajawal', 'sans-serif'],
+                        serif: ['Amiri', 'serif'],
+                        calligraphy: ['Aref Ruqaa', 'Amiri', 'serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        body {
+            background-color: #060d1f;
+            color: #fdfaf2;
+            overflow-x: hidden;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        /* Rich Royal Navy & Gold Ambient Gradient Backdrop */
+        .bg-royal-luxury {
+            background:
+                radial-gradient(circle at 50% 10%, rgba(212, 175, 55, 0.20) 0%, transparent 55%),
+                radial-gradient(circle at 12% 88%, rgba(245, 215, 127, 0.11) 0%, transparent 50%),
+                radial-gradient(circle at 88% 78%, rgba(25, 47, 97, 0.65) 0%, transparent 55%),
+                linear-gradient(160deg, #060d1f 0%, #0b1633 52%, #0f1f44 100%);
+        }
+
+        /* Metallic Gold Shimmer Text */
+        .gold-shimmer {
+            background: linear-gradient(120deg, #b88b24 0%, #f5d77f 25%, #fffbeb 48%, #d4af37 72%, #b88b24 100%);
+            background-size: 240% auto;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: goldSweep 5s linear infinite;
+        }
+
+        @keyframes goldSweep {
+            0% { background-position: 0% center; }
+            100% { background-position: 240% center; }
+        }
+
+        /* Subtle Paper Texture Overlay */
+        .paper-grain {
+            background-image: radial-gradient(rgba(245, 215, 127, 0.06) 1px, transparent 0);
+            background-size: 18px 18px;
+        }
+
+        /* ================= ULTRA-LUXURY 3D ENVELOPE ================= */
+        .envelope-stage-perspective {
+            perspective: 1700px;
+        }
+
+        .luxury-envelope {
+            position: relative;
+            width: 100%;
+            max-width: 420px;
+            height: 280px;
+            margin: 0 auto;
+            cursor: pointer;
+            transform-style: preserve-3d;
+            transition: transform 0.65s cubic-bezier(0.22, 1, 0.36, 1), opacity 0.65s ease;
+        }
+
+        @media (min-width: 640px) {
+            .luxury-envelope {
+                max-width: 460px;
+                height: 305px;
+            }
+        }
+
+        .luxury-envelope:hover:not(.is-opened) {
+            transform: translateY(-8px) rotateX(4deg) scale(1.015);
+        }
+
+        /* Back of Envelope with Double Gold Trim & Royal Linings */
+        .env-back {
+            position: absolute;
+            inset: 0;
+            border-radius: 22px;
+            background: linear-gradient(145deg, #102047 0%, #070e21 60%, #050a18 100%);
+            border: 2px solid rgba(212, 175, 55, 0.75);
+            box-shadow:
+                0 32px 75px rgba(0, 0, 0, 0.85),
+                0 0 45px rgba(212, 175, 55, 0.18),
+                inset 0 0 0 5px rgba(6, 13, 31, 0.8),
+                inset 0 0 0 6.5px rgba(245, 215, 127, 0.32);
+            z-index: 1;
+        }
+
+        /* Inner Ivory Card Rising Smoothly */
+        .env-card-insert {
+            position: absolute;
+            left: 6.5%;
+            right: 6.5%;
+            bottom: 12px;
+            height: 86%;
+            border-radius: 16px;
+            background: linear-gradient(175deg, #fdfaf2 0%, #f6ebd1 100%);
+            border: 1.5px solid #d4af37;
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.55), inset 0 0 18px rgba(212, 175, 55, 0.22);
+            z-index: 2;
+            padding: 16px 14px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            transition: transform 1s cubic-bezier(0.32, 1.35, 0.55, 1) 0.32s, box-shadow 0.8s ease 0.32s;
+        }
+
+        .luxury-envelope.is-opened .env-card-insert {
+            transform: translateY(-142px) scale(1.03);
+            box-shadow: 0 24px 48px rgba(0, 0, 0, 0.7), 0 0 30px rgba(245, 215, 127, 0.35);
+            z-index: 5;
+        }
+
+        /* Front Pocket Flaps Layer */
+        .env-pocket {
+            position: absolute;
+            inset: 0;
+            border-radius: 22px;
+            overflow: hidden;
+            z-index: 3;
+            pointer-events: none;
+        }
+
+        /* Top 3D Rotating Flap */
+        .env-top-flap {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 59%;
+            transform-origin: top center;
+            transition: transform 0.9s cubic-bezier(0.36, 0, 0.2, 1), z-index 0.15s linear 0.35s;
+            z-index: 4;
+            pointer-events: none;
+            filter: drop-shadow(0 10px 18px rgba(0, 0, 0, 0.65));
+        }
+
+        .luxury-envelope.is-opened .env-top-flap {
+            transform: rotateX(180deg);
+            z-index: 1;
+        }
+
+        /* Royal Wax Seal (Gold & Deep Burgundy Accent) */
+        .royal-wax-seal {
+            position: absolute;
+            top: 53%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 86px;
+            height: 86px;
+            border-radius: 50%;
+            background:
+                radial-gradient(circle at 30% 28%, #fffbeb 0%, #f5d77f 28%, #d4af37 62%, #8f6916 92%, #593f09 100%);
+            border: 2.5px solid rgba(255, 251, 235, 0.85);
+            box-shadow:
+                0 12px 28px rgba(0, 0, 0, 0.75),
+                0 0 24px rgba(212, 175, 55, 0.35),
+                inset 0 2px 6px rgba(255, 255, 255, 0.75),
+                inset 0 -5px 10px rgba(77, 17, 36, 0.45);
+            z-index: 6;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            transition: transform 0.55s cubic-bezier(0.34, 1.56, 0.64, 1), opacity 0.4s ease;
+            animation: sealPulse 2.8s infinite ease-in-out;
+        }
+
+        .royal-wax-seal::before {
+            content: '';
+            position: absolute;
+            inset: 5px;
+            border-radius: 50%;
+            border: 1.5px dashed rgba(6, 13, 31, 0.5);
+        }
+
+        .royal-wax-seal::after {
+            content: '';
+            position: absolute;
+            top: -120%;
+            left: -120%;
+            width: 60%;
+            height: 340%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.65), transparent);
+            transform: rotate(28deg);
+            transition: left 0.65s ease;
+        }
+
+        .luxury-envelope:hover:not(.is-opened) .royal-wax-seal::after {
+            left: 160%;
+        }
+
+        @keyframes sealPulse {
+            0%, 100% {
+                transform: translate(-50%, -50%) scale(1);
+                box-shadow: 0 12px 28px rgba(0,0,0,0.75), 0 0 0 0 rgba(212, 175, 55, 0.5);
+            }
+            50% {
+                transform: translate(-50%, -50%) scale(1.05);
+                box-shadow: 0 16px 34px rgba(0,0,0,0.8), 0 0 0 14px rgba(212, 175, 55, 0);
+            }
+        }
+
+        .luxury-envelope.is-opened .royal-wax-seal {
+            opacity: 0;
+            transform: translate(-50%, -50%) scale(1.45);
+            pointer-events: none;
+        }
+
+        /* ================= LUXURY CARDS & TRANSITIONS ================= */
+        .royal-glass-card {
+            background: linear-gradient(155deg, rgba(15, 31, 68, 0.88) 0%, rgba(6, 13, 31, 0.94) 100%);
+            backdrop-filter: blur(18px);
+            -webkit-backdrop-filter: blur(18px);
+            border: 1px solid rgba(212, 175, 55, 0.45);
+            box-shadow:
+                0 28px 70px rgba(0, 0, 0, 0.78),
+                0 0 40px rgba(212, 175, 55, 0.08),
+                inset 0 0 0 4px rgba(6, 13, 31, 0.6),
+                inset 0 0 0 5px rgba(245, 215, 127, 0.22);
+        }
+
+        .corner-filigree {
+            position: relative;
+        }
+        .corner-filigree::before,
+        .corner-filigree::after {
+            content: '';
+            position: absolute;
+            width: 28px;
+            height: 28px;
+            border-color: #f5d77f;
+            border-style: solid;
+            pointer-events: none;
+            opacity: 0.85;
+        }
+        .corner-filigree::before {
+            top: 14px;
+            right: 14px;
+            border-width: 2px 2px 0 0;
+            border-top-right-radius: 10px;
+        }
+        .corner-filigree::after {
+            bottom: 14px;
+            left: 14px;
+            border-width: 0 0 2px 2px;
+            border-bottom-left-radius: 10px;
+        }
+
+        .slide-panel {
+            display: none;
+            opacity: 0;
+        }
+
+        .slide-panel.is-active {
+            display: flex;
+            animation: luxurySlideIn 0.55s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+        }
+
+        @keyframes luxurySlideIn {
+            from {
+                opacity: 0;
+                transform: translateY(22px) scale(0.97);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0) scale(1);
+            }
+        }
+
+        /* Floating Sparkling Gold Particles */
+        .sparkle-dot {
+            position: fixed;
+            border-radius: 50%;
+            background: radial-gradient(circle, #fffbeb 0%, #f5d77f 45%, #d4af37 100%);
+            box-shadow: 0 0 8px rgba(245, 215, 127, 0.75);
+            pointer-events: none;
+            animation: driftUp linear infinite;
+            z-index: 1;
+        }
+
+        @keyframes driftUp {
+            0% { transform: translateY(105vh) scale(0.5) rotate(0deg); opacity: 0; }
+            18% { opacity: 0.7; }
+            82% { opacity: 0.5; }
+            100% { transform: translateY(-12vh) scale(1.25) rotate(180deg); opacity: 0; }
+        }
+
+        /* Audio Equalizer Bars */
+        .eq-bar {
+            width: 3px;
+            height: 6px;
+            background: linear-gradient(to top, #b88b24, #fffbeb);
+            border-radius: 999px;
+            transition: height 0.25s ease;
+        }
+        .is-playing .eq-bar-1 { animation: eqBounce 0.85s infinite ease-in-out; }
+        .is-playing .eq-bar-2 { animation: eqBounce 0.65s infinite ease-in-out 0.18s; }
+        .is-playing .eq-bar-3 { animation: eqBounce 0.95s infinite ease-in-out 0.1s; }
+
+        @keyframes eqBounce {
+            0%, 100% { height: 5px; }
+            50% { height: 16px; }
+        }
+    </style>
+</head>
+<body class="bg-royal-luxury paper-grain min-h-screen flex flex-col justify-between relative selection:bg-gold-400 selection:text-royal-950">
+
+    <!-- Ambient Sparkling Gold Particles -->
+    <div id="ambient-sparkles" aria-hidden="true"></div>
+
+    <!-- Top Luxury Header Bar -->
+    <header class="w-full max-w-xl mx-auto px-4 pt-4 pb-2 z-30 flex items-center justify-between gap-2">
+        <div class="flex items-center gap-2.5">
+            <span class="w-9 h-9 rounded-full bg-royal-800/90 border border-gold-400/60 flex items-center justify-center text-gold-200 shadow-lg">
+                <i class="fa-solid fa-graduation-cap text-sm"></i>
+            </span>
+            <div class="leading-tight">
+                <span class="block text-xs sm:text-sm font-extrabold text-gold-200">جامعة المشرق الأهلية</span>
+                <span class="block text-[10px] text-gold-300/75">احتفالية التخرج • 2026</span>
+            </div>
+        </div>
+
+        <!-- Music Controls: Toggle Play/Pause & Switch Gentle Theme -->
+        <div class="flex items-center gap-1.5">
+            <button onclick="switchMusicTheme()" id="themeSwitchBtn" title="تبديل المقطوعة الهادئة" aria-label="تبديل المقطوعة الهادئة" class="w-8 h-8 rounded-full bg-royal-800/90 hover:bg-royal-700 border border-gold-400/45 text-gold-200 text-xs flex items-center justify-center transition active:scale-95 shadow">
+                <i class="fa-solid fa-sliders"></i>
+            </button>
+
+            <button onclick="toggleMusic()" id="musicBtn" aria-label="تشغيل أو إيقاف الموسيقى" class="flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-royal-800/95 hover:bg-royal-700 border border-gold-400/55 text-gold-100 text-xs font-bold transition active:scale-95 shadow-lg">
+                <div class="flex items-end gap-0.5 h-4">
+                    <span class="eq-bar eq-bar-1"></span>
+                    <span class="eq-bar eq-bar-2"></span>
+                    <span class="eq-bar eq-bar-3"></span>
+                </div>
+                <span id="musicLabel">موسيقى هادئة</span>
+            </button>
+        </div>
+    </header>
+
+    <!-- ==================== STAGE 1: LUXURY 3D ENVELOPE ==================== -->
+    <section id="stage-envelope" class="envelope-stage-perspective flex-1 w-full max-w-xl mx-auto px-4 py-4 flex flex-col items-center justify-center z-20 transition-all duration-700">
+        
+        <div class="text-center mb-6">
+            <div class="inline-flex items-center gap-2 px-4 py-1 rounded-full bg-gold-400/10 border border-gold-400/35 text-gold-200 text-xs font-bold mb-2.5 shadow-sm">
+                <i class="fa-solid fa-crown text-gold-400 text-[11px]"></i>
+                <span>دعوة خاصة للاحتفاء بالتخرج</span>
+            </div>
+            <h1 class="font-calligraphy text-3xl sm:text-4xl gold-shimmer leading-relaxed">
+                معن طه العيساوي
+            </h1>
+            <p class="text-xs sm:text-sm text-gold-200/80 font-medium mt-0.5">
+                خريج جامعة المشرق الأهلية
+            </p>
+        </div>
+
+        <!-- 3D Envelope Assembly -->
+        <div class="w-full px-1">
+            <div id="luxuryEnvelope" onclick="openLuxuryEnvelope()" role="button" tabindex="0" aria-label="انقر لفتح ظرف دعوة التخرج" class="luxury-envelope">
+                
+                <!-- Back Shell -->
+                <div class="env-back"></div>
+
+                <!-- Ivory Card Rising on Open -->
+                <div class="env-card-insert">
+                    <div class="w-9 h-9 rounded-full bg-royal-900 text-gold-300 flex items-center justify-center mb-1.5 shadow">
+                        <i class="fa-solid fa-graduation-cap text-sm"></i>
+                    </div>
+                    <div class="text-[11px] font-bold text-royal-800">جامعة المشرق الأهلية</div>
+                    <div class="font-calligraphy text-xl text-royal-950 mt-0.5">دعوة حفل تخرج</div>
+                    <div class="w-20 h-[1.5px] bg-gradient-to-r from-transparent via-gold-500 to-transparent my-1.5"></div>
+                    <div class="font-serif text-lg font-bold text-gold-600">معن طه العيساوي</div>
+                    <div class="text-[11px] font-semibold text-royal-800 mt-1">الجمعة 27/11/2026 • 12:00 ظهراً</div>
+                </div>
+
+                <!-- Front Pocket Flaps SVG -->
+                <div class="env-pocket">
+                    <svg class="w-full h-full block" viewBox="0 0 420 280" preserveAspectRatio="none">
+                        <defs>
+                            <linearGradient id="sideFlapGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" stop-color="#142754"/>
+                                <stop offset="100%" stop-color="#081026"/>
+                            </linearGradient>
+                            <linearGradient id="baseFlapGrad" x1="0%" y1="100%" x2="0%" y2="0%">
+                                <stop offset="0%" stop-color="#09132c"/>
+                                <stop offset="100%" stop-color="#172b5c"/>
+                            </linearGradient>
+                        </defs>
+                        <!-- Left Flap -->
+                        <polygon points="0,0 215,146 0,280" fill="url(#sideFlapGrad)" stroke="#d4af37" stroke-width="1.4" stroke-opacity="0.55"/>
+                        <!-- Right Flap -->
+                        <polygon points="420,0 205,146 420,280" fill="url(#sideFlapGrad)" stroke="#d4af37" stroke-width="1.4" stroke-opacity="0.55"/>
+                        <!-- Bottom Flap -->
+                        <polygon points="0,280 210,132 420,280" fill="url(#baseFlapGrad)" stroke="#f5d77f" stroke-width="2" stroke-opacity="0.85"/>
+                        <!-- Inner Decorative Gold Line -->
+                        <polygon points="14,274 210,142 406,274" fill="none" stroke="#d4af37" stroke-width="0.9" stroke-opacity="0.4"/>
+                    </svg>
+                </div>
+
+                <!-- Top 3D Flap -->
+                <div class="env-top-flap">
+                    <svg class="w-full h-full block" viewBox="0 0 420 165" preserveAspectRatio="none">
+                        <defs>
+                            <linearGradient id="topFlapMetallic" x1="0%" y1="0%" x2="0%" y2="100%">
+                                <stop offset="0%" stop-color="#1d356e"/>
+                                <stop offset="100%" stop-color="#0a142e"/>
+                            </linearGradient>
+                        </defs>
+                        <polygon points="0,0 420,0 210,158" fill="url(#topFlapMetallic)" stroke="#f5d77f" stroke-width="2.2"/>
+                        <polygon points="12,5 408,5 210,145" fill="none" stroke="#d4af37" stroke-width="0.9" stroke-opacity="0.45"/>
+                    </svg>
+                </div>
+
+                <!-- Royal Wax Seal with Letter (م) & Cap -->
+                <div class="royal-wax-seal">
+                    <span class="font-calligraphy text-2xl font-bold text-royal-950 leading-none">م</span>
+                    <span class="text-[9px] font-extrabold text-burgundy tracking-tight mt-0.5">افتح الدعوة</span>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- Subtle Recipient Caption & Open Action -->
+        <div class="mt-7 text-center">
+            <p class="text-xs text-gold-200/85 mb-3">
+                باسم الخريج <span class="font-bold text-gold-300">معن طه العيساوي</span> • مجمع النخيل
+            </p>
+            <button onclick="openLuxuryEnvelope()" class="px-6 py-2.5 rounded-full bg-gradient-to-l from-gold-500 via-gold-400 to-gold-200 text-royal-950 text-xs sm:text-sm font-extrabold shadow-xl shadow-gold-500/20 hover:brightness-105 active:scale-95 transition inline-flex items-center gap-2">
+                <i class="fa-solid fa-envelope-open-text"></i>
+                <span>انقر لفتح الدعوة وتشغيل الموسيقى</span>
+            </button>
+        </div>
+    </section>
+
+    <!-- ==================== STAGE 2: 4 SEQUENTIAL LUXURY PAGES ==================== -->
+    <main id="stage-cards" class="hidden flex-1 w-full max-w-xl mx-auto px-4 py-2 items-center justify-center z-20">
+
+        <!-- PAGE 1: الترحيب والإعلان الملكي + العد التنازلي -->
+        <section id="slide-0" class="slide-panel is-active w-full royal-glass-card corner-filigree rounded-3xl p-6 sm:p-8 flex-col items-center text-center relative overflow-hidden">
+            <!-- Royal Emblem -->
+            <div class="w-20 h-20 sm:w-24 sm:h-24 rounded-full bg-gradient-to-b from-royal-700 to-royal-950 border-2 border-gold-300 flex items-center justify-center shadow-2xl mb-3.5 relative">
+                <div class="absolute inset-1.5 rounded-full border border-gold-200/35"></div>
+                <i class="fa-solid fa-graduation-cap text-3xl sm:text-4xl gold-shimmer"></i>
+            </div>
+
+            <span class="text-xs font-bold text-gold-200/90 tracking-wide mb-1">
+                أجمل اللحظات تكتمل بحضوركم الكريم
+            </span>
+
+            <!-- Graduate Name Banner -->
+            <div class="w-full my-2 px-4 py-3.5 rounded-2xl bg-royal-950/75 border border-gold-400/40 shadow-inner">
+                <span class="block text-[11px] text-gold-300/80 mb-0.5">إعلان حفل تخرج</span>
+                <h1 class="font-calligraphy text-3xl sm:text-4xl gold-shimmer leading-relaxed">
+                    معن طه العيساوي
+                </h1>
+                <div class="mt-1 text-sm sm:text-base font-extrabold text-ivory">
+                    جامعة المشرق الأهلية
+                </div>
+            </div>
+
+            <!-- Live Countdown -->
+            <div class="w-full p-3 rounded-2xl bg-royal-900/80 border border-gold-400/30 mt-2 mb-5">
+                <div class="text-[11px] text-gold-200 font-bold mb-2">
+                    العد التنازلي للحفل • الجمعة 27/11/2026 الساعة 12:00 ظهراً
+                </div>
+                <div class="grid grid-cols-4 gap-2 text-center" dir="ltr">
+                    <div class="bg-royal-950/90 rounded-xl py-1.5 border border-gold-400/25">
+                        <div id="cd-days" class="text-base sm:text-lg font-black text-gold-200">00</div>
+                        <div class="text-[10px] text-gold-300/70">يوم</div>
+                    </div>
+                    <div class="bg-royal-950/90 rounded-xl py-1.5 border border-gold-400/25">
+                        <div id="cd-hours" class="text-base sm:text-lg font-black text-gold-200">00</div>
+                        <div class="text-[10px] text-gold-300/70">ساعة</div>
+                    </div>
+                    <div class="bg-royal-950/90 rounded-xl py-1.5 border border-gold-400/25">
+                        <div id="cd-mins" class="text-base sm:text-lg font-black text-gold-200">00</div>
+                        <div class="text-[10px] text-gold-300/70">دقيقة</div>
+                    </div>
+                    <div class="bg-royal-950/90 rounded-xl py-1.5 border border-gold-400/25">
+                        <div id="cd-secs" class="text-base sm:text-lg font-black text-gold-200">00</div>
+                        <div class="text-[10px] text-gold-300/70">ثانية</div>
+                    </div>
+                </div>
+            </div>
+
+            <button onclick="nextSlide()" class="w-full py-3.5 px-6 rounded-2xl bg-gradient-to-l from-gold-500 via-gold-400 to-gold-200 text-royal-950 font-extrabold text-sm sm:text-base shadow-lg shadow-gold-500/25 hover:brightness-105 active:scale-95 transition flex items-center justify-center gap-2.5">
+                <span>تفاصيل الحفل والمكان</span>
+                <i class="fa-solid fa-arrow-left"></i>
+            </button>
+        </section>
+
+        <!-- PAGE 2: تفاصيل الحفل والمكان + تقويم + خرائط + نسخ التفاصيل -->
+        <section id="slide-1" class="slide-panel w-full royal-glass-card corner-filigree rounded-3xl p-5 sm:p-8 flex-col items-center text-center relative">
+            <h2 class="font-calligraphy text-3xl sm:text-4xl gold-shimmer mb-1">
+                تفاصيل الحفل والمكان
+            </h2>
+            <p class="text-xs text-gold-200/80 mb-4">
+                بشرف تخرج <span class="font-bold text-gold-200">معن طه العيساوي</span> من <span class="font-bold text-gold-200">جامعة المشرق الأهلية</span>
+            </p>
+
+            <div class="w-full space-y-2.5 mb-3.5 text-right">
+                <!-- Day & Date -->
+                <div class="flex items-center gap-3.5 p-3 rounded-2xl bg-royal-950/80 border border-gold-400/35">
+                    <div class="w-10 h-10 rounded-xl bg-gold-400/15 border border-gold-400/45 flex items-center justify-center text-gold-300 shrink-0">
+                        <i class="fa-solid fa-calendar-day text-base"></i>
+                    </div>
+                    <div>
+                        <div class="text-[11px] text-gold-300/80">اليوم والتاريخ</div>
+                        <div class="text-sm sm:text-base font-extrabold text-ivory">يوم الجمعة الموافق 27 / 11 / 2026</div>
+                    </div>
+                </div>
+
+                <!-- Time -->
+                <div class="flex items-center gap-3.5 p-3 rounded-2xl bg-royal-950/80 border border-gold-400/35">
+                    <div class="w-10 h-10 rounded-xl bg-gold-400/15 border border-gold-400/45 flex items-center justify-center text-gold-300 shrink-0">
+                        <i class="fa-solid fa-clock text-base"></i>
+                    </div>
+                    <div>
+                        <div class="text-[11px] text-gold-300/80">موعد الحضور</div>
+                        <div class="text-sm sm:text-base font-extrabold text-ivory">الساعة 12:00 ظهراً</div>
+                    </div>
+                </div>
+
+                <!-- Location: Al-Nakheel Complex -->
+                <div class="flex items-center justify-between gap-2 p-3 rounded-2xl bg-royal-950/80 border border-gold-400/45">
+                    <div class="flex items-center gap-3.5">
+                        <div class="w-10 h-10 rounded-xl bg-gold-400/15 border border-gold-400/45 flex items-center justify-center text-gold-300 shrink-0">
+                            <i class="fa-solid fa-location-dot text-base"></i>
+                        </div>
+                        <div>
+                            <div class="text-[11px] text-gold-300/80">المكان / الموقع</div>
+                            <div class="text-sm sm:text-base font-extrabold text-gold-200">مجمع النخيل</div>
+                        </div>
+                    </div>
+                    <a href="https://www.google.com/maps/search/?api=1&query=%D9%85%D8%AC%D9%85%D8%B9+%D8%A7%D9%84%D9%86%D8%AE%D9%8A%D9%84" target="_blank" rel="noopener noreferrer" class="px-3 py-1.5 rounded-xl bg-gold-400/20 hover:bg-gold-400/30 border border-gold-400/50 text-gold-200 text-xs font-bold transition flex items-center gap-1.5 shrink-0">
+                        <i class="fa-solid fa-map-location-dot"></i>
+                        <span>الخرائط</span>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Quick Actions: Add to Calendar & Copy Event Details -->
+            <div class="grid grid-cols-2 gap-2.5 w-full mb-4">
+                <button onclick="downloadCalendarEvent()" class="py-2.5 px-3 rounded-xl bg-royal-800/90 hover:bg-royal-700 border border-gold-400/40 text-gold-200 text-xs font-bold transition active:scale-95 flex items-center justify-center gap-1.5">
+                    <i class="fa-solid fa-calendar-plus text-gold-300"></i>
+                    <span>إضافة للتقويم</span>
+                </button>
+                <button onclick="copyEventDetails()" class="py-2.5 px-3 rounded-xl bg-royal-800/90 hover:bg-royal-700 border border-gold-400/40 text-gold-200 text-xs font-bold transition active:scale-95 flex items-center justify-center gap-1.5">
+                    <i class="fa-regular fa-copy text-gold-300"></i>
+                    <span>نسخ التفاصيل</span>
+                </button>
+            </div>
+
+            <!-- Navigation Row -->
+            <div class="flex items-center justify-between w-full gap-3 mt-auto">
+                <button onclick="prevSlide()" class="px-4 py-3 rounded-xl bg-royal-800 hover:bg-royal-700 border border-gold-400/35 text-gold-200 text-xs sm:text-sm font-bold transition active:scale-95 flex items-center gap-1.5">
+                    <i class="fa-solid fa-arrow-right"></i>
+                    <span>السابق</span>
+                </button>
+                <button onclick="nextSlide()" class="flex-1 py-3 px-4 rounded-xl bg-gradient-to-l from-gold-500 via-gold-400 to-gold-200 text-royal-950 text-xs sm:text-sm font-extrabold shadow-md hover:brightness-105 transition active:scale-95 flex items-center justify-center gap-2">
+                    <span>كلمة الخريج</span>
+                    <i class="fa-solid fa-arrow-left"></i>
+                </button>
+            </div>
+        </section>
+
+        <!-- PAGE 3: كلمة الخريج واللحظة + نسخ بطاقة الدعوة -->
+        <section id="slide-2" class="slide-panel w-full royal-glass-card corner-filigree rounded-3xl p-6 sm:p-8 flex-col items-center text-center relative">
+            <div class="w-14 h-14 rounded-2xl bg-gold-400/15 border border-gold-400/45 flex items-center justify-center text-gold-300 mb-3 shadow">
+                <i class="fa-solid fa-feather-pointed text-xl"></i>
+            </div>
+
+            <h2 class="font-calligraphy text-3xl sm:text-4xl gold-shimmer mb-3">
+                كلمة الخريج واللحظة
+            </h2>
+
+            <div class="w-full rounded-2xl bg-royal-950/75 border border-gold-400/30 p-4 sm:p-5 text-right mb-4">
+                <p class="font-serif text-base sm:text-lg text-ivory leading-loose mb-3">
+                    "إلى أهلي سندي الأول، وإلى أساتذتي الكرام في <span class="text-gold-200 font-bold">جامعة المشرق الأهلية</span>، وإلى أصدقائي رفاق الدرب.. شكراً لكل خطوة دعمٍ ودعوة صالحة أوصلتني إلى هذا اليوم. حضوركم في <span class="text-gold-200 font-bold">مجمع النخيل</span> يوم الجمعة 27/11/2026 الساعة 12:00 ظهراً يزيّن فرحتي ويجعلها أعمق وأجمل."
+                </p>
+                <div class="flex items-center justify-between pt-2.5 border-t border-gold-400/15">
+                    <span class="font-calligraphy text-xl text-gold-200">معن طه العيساوي</span>
+                    <span class="text-[11px] text-gold-300/75">جامعة المشرق الأهلية</span>
+                </div>
+            </div>
+
+            <button onclick="copyFormattedCard()" class="w-full py-3 px-4 rounded-xl bg-royal-800/95 hover:bg-royal-700 border border-gold-400/50 text-gold-200 text-xs sm:text-sm font-bold transition active:scale-95 flex items-center justify-center gap-2 mb-4">
+                <i class="fa-solid fa-wand-magic-sparkles text-gold-300"></i>
+                <span>نسخ بطاقة الدعوة كرسالة نصية مرتبة</span>
+            </button>
+
+            <!-- Navigation Row -->
+            <div class="flex items-center justify-between w-full gap-3 mt-auto">
+                <button onclick="prevSlide()" class="px-4 py-3 rounded-xl bg-royal-800 hover:bg-royal-700 border border-gold-400/35 text-gold-200 text-xs sm:text-sm font-bold transition active:scale-95 flex items-center gap-1.5">
+                    <i class="fa-solid fa-arrow-right"></i>
+                    <span>السابق</span>
+                </button>
+                <button onclick="nextSlide()" class="flex-1 py-3 px-4 rounded-xl bg-gradient-to-l from-gold-500 via-gold-400 to-gold-200 text-royal-950 text-xs sm:text-sm font-extrabold shadow-md hover:brightness-105 transition active:scale-95 flex items-center justify-center gap-2">
+                    <span>إرسال التهاني ومشاركة الرابط</span>
+                    <i class="fa-solid fa-arrow-left"></i>
+                </button>
+            </div>
+        </section>
+
+        <!-- PAGE 4: إرسال التهاني والمباركات عبر واتساب + مشاركة الرابط -->
+        <section id="slide-3" class="slide-panel w-full royal-glass-card corner-filigree rounded-3xl p-5 sm:p-8 flex-col items-center text-center relative">
+            <div class="flex items-center justify-center gap-2.5 mb-2">
+                <div class="w-11 h-11 rounded-2xl bg-emerald-500/15 border border-emerald-400/45 flex items-center justify-center text-emerald-400">
+                    <i class="fa-brands fa-whatsapp text-2xl"></i>
+                </div>
+                <div class="text-right">
+                    <h2 class="font-calligraphy text-2xl sm:text-3xl gold-shimmer leading-tight">
+                        التهاني والمباركات
+                    </h2>
+                    <span class="block text-[11px] text-gold-200/75">تصلك مباشرة على واتساب معن</span>
+                </div>
+            </div>
+
+            <!-- Sender Name Input -->
+            <div class="w-full text-right mb-2">
+                <label for="senderNameInput" class="block text-xs text-gold-200 font-bold mb-1">اسم المهنّئ</label>
+                <input type="text" id="senderNameInput" placeholder="اكتب اسمك الكريم..." class="w-full px-3.5 py-2 rounded-xl bg-royal-950/90 border border-gold-400/35 text-ivory placeholder-slate-500 text-sm focus:outline-none focus:border-gold-300 transition">
+            </div>
+
+            <!-- One-Tap Congratulation Presets -->
+            <div class="w-full text-right mb-2">
+                <span class="block text-[11px] text-gold-300/80 mb-1">رسائل تهنئة جاهزة بنقرة واحدة:</span>
+                <div class="flex flex-wrap gap-1.5">
+                    <button type="button" onclick="setWishText('ألف مبارك التخرج أخي معن طه العيساوي! منها للأعلى ودوام التألق والنجاح 🎓✨')" class="text-[11px] px-2.5 py-1 rounded-lg bg-royal-800/90 hover:bg-gold-400/20 border border-gold-400/35 text-gold-100 transition">
+                        🎓 ألف مبارك التخرج
+                    </button>
+                    <button type="button" onclick="setWishText('مبارك تخرجك من جامعة المشرق الأهلية يا معن، فخر كبير وإنجاز يستحق الاحتفاء 🌟💐')" class="text-[11px] px-2.5 py-1 rounded-lg bg-royal-800/90 hover:bg-gold-400/20 border border-gold-400/35 text-gold-100 transition">
+                        🌟 فخر وإنجاز كبير
+                    </button>
+                    <button type="button" onclick="setWishText('نشاركك الفرحة ونؤكد حضورنا في مجمع النخيل يوم الجمعة 27/11/2026 الساعة 12:00 ظهراً 🤍🎉')" class="text-[11px] px-2.5 py-1 rounded-lg bg-royal-800/90 hover:bg-gold-400/20 border border-gold-400/35 text-gold-100 transition">
+                        🎉 تأكيد الحضور للمجمع
+                    </button>
+                </div>
+            </div>
+
+            <!-- Custom Message Textarea -->
+            <div class="w-full text-right mb-3">
+                <textarea id="wishTextarea" rows="2" placeholder="اكتب تهنئتك هنا..." class="w-full px-3.5 py-2 rounded-xl bg-royal-950/90 border border-gold-400/35 text-ivory placeholder-slate-500 text-sm focus:outline-none focus:border-gold-300 transition resize-none">ألف مبارك التخرج أخي معن طه العيساوي! تمنياتي لك بمستقبل حافل بالنجاحات 🎓✨</textarea>
+            </div>
+
+            <!-- Send via WhatsApp + Share/Copy Link -->
+            <div class="w-full space-y-2 mb-3.5">
+                <button onclick="sendToWhatsApp()" class="w-full py-3 px-4 rounded-2xl bg-gradient-to-l from-emerald-600 to-emerald-500 hover:from-emerald-500 hover:to-emerald-400 text-white font-extrabold text-xs sm:text-sm shadow-lg shadow-emerald-600/25 transition active:scale-95 flex items-center justify-center gap-2">
+                    <i class="fa-brands fa-whatsapp text-lg"></i>
+                    <span>إرسال التهنئة عبر واتساب (07831713480)</span>
+                </button>
+
+                <button onclick="shareOrCopyLink()" class="w-full py-2.5 px-4 rounded-xl bg-gradient-to-l from-gold-500 via-gold-400 to-gold-200 text-royal-950 font-extrabold text-xs sm:text-sm shadow hover:brightness-105 transition active:scale-95 flex items-center justify-center gap-2">
+                    <i class="fa-solid fa-share-nodes"></i>
+                    <span id="shareLinkText">مشاركة أو نسخ رابط الدعوة</span>
+                </button>
+            </div>
+
+            <!-- Navigation & Re-open Envelope -->
+            <div class="flex items-center justify-between w-full gap-2 mt-auto pt-2 border-t border-gold-400/15">
+                <button onclick="prevSlide()" class="px-3.5 py-2 rounded-xl bg-royal-800 hover:bg-royal-700 border border-gold-400/35 text-gold-200 text-xs font-bold transition flex items-center gap-1.5">
+                    <i class="fa-solid fa-arrow-right"></i>
+                    <span>السابق</span>
+                </button>
+                <button onclick="reopenEnvelopeStage()" class="px-3.5 py-2 rounded-xl bg-royal-800 hover:bg-royal-700 border border-gold-400/35 text-gold-200 text-xs font-bold transition flex items-center gap-1.5">
+                    <i class="fa-solid fa-envelope"></i>
+                    <span>الظرف الملكي</span>
+                </button>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Bottom Interactive Page Dots & Swipe Hint -->
+    <footer id="stage-footer" class="hidden w-full max-w-xl mx-auto px-4 pb-5 pt-2 z-20 flex-col items-center gap-1.5">
+        <div class="flex items-center justify-center gap-2.5" role="tablist" aria-label="تنقل صفحات الدعوة">
+            <button onclick="goToSlide(0)" id="nav-dot-0" aria-label="الصفحة 1" class="h-2.5 w-8 rounded-full bg-gold-300 transition-all duration-300"></button>
+            <button onclick="goToSlide(1)" id="nav-dot-1" aria-label="الصفحة 2" class="h-2.5 w-2.5 rounded-full bg-gold-400/35 hover:bg-gold-400/65 transition-all duration-300"></button>
+            <button onclick="goToSlide(2)" id="nav-dot-2" aria-label="الصفحة 3" class="h-2.5 w-2.5 rounded-full bg-gold-400/35 hover:bg-gold-400/65 transition-all duration-300"></button>
+            <button onclick="goToSlide(3)" id="nav-dot-3" aria-label="الصفحة 4" class="h-2.5 w-2.5 rounded-full bg-gold-400/35 hover:bg-gold-400/65 transition-all duration-300"></button>
+        </div>
+        <div class="text-[11px] text-gold-200/75">
+            صفحة <span id="slide-index-label" class="text-gold-200 font-bold">1</span> من 4 • اسحب أو استخدم الأسهم للتنقل
+        </div>
+    </footer>
+
+    <!-- Elegant Toast Notification -->
+    <div id="luxury-toast" class="fixed bottom-16 left-1/2 -translate-x-1/2 px-5 py-2.5 rounded-full bg-royal-800/95 border border-gold-300 text-gold-100 text-xs sm:text-sm font-bold shadow-2xl opacity-0 pointer-events-none transition-all duration-300 z-50 flex items-center gap-2 whitespace-nowrap">
+        <i class="fa-solid fa-sparkles text-gold-300"></i>
+        <span id="toast-message">تم بنجاح!</span>
+    </div>
+
+    <script>
+        // ================= GRADUATE & EVENT DATA =================
+        const GRADUATE_NAME = "معن طه العيساوي";
+        const UNIVERSITY_NAME = "جامعة المشرق الأهلية";
+        const VENUE_NAME = "مجمع النخيل";
+        const EVENT_DATE_TEXT = "يوم الجمعة الموافق 27/11/2026";
+        const EVENT_TIME_TEXT = "الساعة 12:00 ظهراً";
+        const RAW_PHONE = "07831713480";
+
+        function formatIraqiWhatsAppNumber(phone) {
+            const digits = (phone || "").replace(/\D/g, "");
+            if (digits.startsWith("964")) return digits;
+            if (digits.startsWith("07")) return "964" + digits.slice(1);
+            if (digits.startsWith("7") && digits.length === 10) return "964" + digits;
+            return "9647831713480";
+        }
+
+        const WHATSAPP_NUMBER = formatIraqiWhatsAppNumber(RAW_PHONE);
+
+        let currentSlide = 0;
+        const TOTAL_SLIDES = 4;
+        let isEnvelopeOpened = false;
+
+        // ================= GENTLE PIANO & STRINGS SYNTHESIZER + SOFT PAGE SOUND =================
+        class RoyalAudioEngine {
+            constructor() {
+                this.ctx = null;
+                this.masterGain = null;
+                this.isPlaying = false;
+                this.timerId = null;
+                this.step = 0;
+                this.themeIndex = 0;
+
+                // Two calm, emotional & celebratory harmonic themes
+                this.themes = [
+                    {
+                        name: "بيانو وأوتار ملكية",
+                        intervalMs: 560,
+                        chords: [
+                            { pad: [174.61, 220.00, 261.63, 329.63], arp: [349.23, 440.00, 523.25, 659.25, 523.25, 440.00] }, // Fmaj7
+                            { pad: [130.81, 196.00, 246.94, 329.63], arp: [261.63, 329.63, 392.00, 493.88, 659.25, 493.88] }, // Cmaj7
+                            { pad: [110.00, 164.81, 220.00, 261.63], arp: [220.00, 329.63, 392.00, 523.25, 392.00, 329.63] }, // Am7
+                            { pad: [98.00,  196.00, 246.94, 293.66], arp: [196.00, 293.66, 392.00, 493.88, 587.33, 493.88] }  // G6
+                        ]
+                    },
+                    {
+                        name: "نغمة فجر التخرج",
+                        intervalMs: 620,
+                        chords: [
+                            { pad: [146.83, 220.00, 293.66, 369.99], arp: [293.66, 369.99, 440.00, 587.33, 440.00, 369.99] }, // Dmaj7
+                            { pad: [110.00, 164.81, 220.00, 277.18], arp: [220.00, 277.18, 329.63, 440.00, 554.37, 440.00] }, // Amaj7
+                            { pad: [123.47, 185.00, 246.94, 293.66], arp: [246.94, 293.66, 369.99, 493.88, 369.99, 293.66] }, // Bm7
+                            { pad: [130.81, 196.00, 261.63, 329.63], arp: [261.63, 329.63, 392.00, 523.25, 392.00, 329.63] }  // Cmaj7
+                        ]
+                    }
+                ];
+            }
+
+            ensureContext() {
+                if (!this.ctx) {
+                    const AudioContextClass = window.AudioContext || window.webkitAudioContext;
+                    this.ctx = new AudioContextClass();
+                    this.masterGain = this.ctx.createGain();
+                    this.masterGain.gain.setValueAtTime(0.30, this.ctx.currentTime);
+                    this.masterGain.connect(this.ctx.destination);
+                }
+                if (this.ctx.state === 'suspended') {
+                    this.ctx.resume();
+                }
+            }
+
+            // Ultra-soft chime sound when turning pages
+            playPageChime() {
+                try {
+                    this.ensureContext();
+                    const now = this.ctx.currentTime;
+                    const osc = this.ctx.createOscillator();
+                    const gain = this.ctx.createGain();
+                    osc.type = 'sine';
+                    osc.frequency.setValueAtTime(587.33, now); // D5
+                    osc.frequency.exponentialRampToValueAtTime(783.99, now + 0.16); // G5
+
+                    gain.gain.setValueAtTime(0.0001, now);
+                    gain.gain.linearRampToValueAtTime(0.05, now + 0.02);
+                    gain.gain.exponentialRampToValueAtTime(0.0001, now + 0.28);
+
+                    osc.connect(gain);
+                    gain.connect(this.masterGain);
+                    osc.start(now);
+                    osc.stop(now + 0.3);
+                } catch (e) {
+                    // Ignore audio errors if blocked
+                }
+            }
+
+            playSoftPianoKey(freq, startTime, duration = 2.6, vol = 0.13) {
+                if (!this.ctx || !this.isPlaying) return;
+
+                const oscMain = this.ctx.createOscillator();
+                const oscHarmonic = this.ctx.createOscillator();
+                const harmGain = this.ctx.createGain();
+                const filter = this.ctx.createBiquadFilter();
+                const env = this.ctx.createGain();
+
+                oscMain.type = 'sine';
+                oscMain.frequency.setValueAtTime(freq, startTime);
+
+                oscHarmonic.type = 'triangle';
+                oscHarmonic.frequency.setValueAtTime(freq * 2, startTime);
+                harmGain.gain.setValueAtTime(0.16, startTime);
+
+                filter.type = 'lowpass';
+                filter.frequency.setValueAtTime(1350, startTime);
+                filter.frequency.exponentialRampToValueAtTime(400, startTime + duration);
+
+                env.gain.setValueAtTime(0.0001, startTime);
+                env.gain.linearRampToValueAtTime(vol, startTime + 0.05);
+                env.gain.exponentialRampToValueAtTime(0.0001, startTime + duration);
+
+                oscMain.connect(filter);
+                oscHarmonic.connect(harmGain);
+                harmGain.connect(filter);
+                filter.connect(env);
+                env.connect(this.masterGain);
+
+                oscMain.start(startTime);
+                oscHarmonic.start(startTime);
+                oscMain.stop(startTime + duration + 0.06);
+                oscHarmonic.stop(startTime + duration + 0.06);
+            }
+
+            playWarmStrings(freqs, startTime, duration = 3.9) {
+                if (!this.ctx || !this.isPlaying) return;
+
+                freqs.forEach(freq => {
+                    const osc = this.ctx.createOscillator();
+                    const filter = this.ctx.createBiquadFilter();
+                    const gain = this.ctx.createGain();
+
+                    osc.type = 'sine';
+                    osc.frequency.setValueAtTime(freq, startTime);
+
+                    filter.type = 'lowpass';
+                    filter.frequency.setValueAtTime(600, startTime);
+
+                    gain.gain.setValueAtTime(0.0001, startTime);
+                    gain.gain.linearRampToValueAtTime(0.04, startTime + 0.95);
+                    gain.gain.exponentialRampToValueAtTime(0.0001, startTime + duration);
+
+                    osc.connect(filter);
+                    filter.connect(gain);
+                    gain.connect(this.masterGain);
+
+                    osc.start(startTime);
+                    osc.stop(startTime + duration + 0.1);
+                });
+            }
+
+            start() {
+                this.ensureContext();
+                if (this.isPlaying) return;
+                this.isPlaying = true;
+                this.syncButtonUI();
+                this.scheduleLoop();
+            }
+
+            scheduleLoop() {
+                if (this.timerId) {
+                    clearInterval(this.timerId);
+                    this.timerId = null;
+                }
+                const theme = this.themes[this.themeIndex];
+
+                const tick = () => {
+                    if (!this.isPlaying || !this.ctx) return;
+                    const now = this.ctx.currentTime;
+                    const chordIdx = Math.floor(this.step / 6) % theme.chords.length;
+                    const noteIdx = this.step % 6;
+                    const chord = theme.chords[chordIdx];
+
+                    if (noteIdx === 0) {
+                        this.playWarmStrings(chord.pad, now, 3.8);
+                    }
+
+                    const freq = chord.arp[noteIdx];
+                    const velocity = noteIdx === 0 ? 0.16 : 0.11;
+                    this.playSoftPianoKey(freq, now, 2.6, velocity);
+                    this.step++;
+                };
+
+                tick();
+                this.timerId = setInterval(tick, theme.intervalMs);
+            }
+
+            stop() {
+                this.isPlaying = false;
+                if (this.timerId) {
+                    clearInterval(this.timerId);
+                    this.timerId = null;
+                }
+                this.syncButtonUI();
+            }
+
+            toggle() {
+                if (this.isPlaying) {
+                    this.stop();
+                } else {
+                    this.start();
+                }
+            }
+
+            nextTheme() {
+                this.themeIndex = (this.themeIndex + 1) % this.themes.length;
+                const chosen = this.themes[this.themeIndex];
+                if (!this.isPlaying) {
+                    this.start();
+                } else {
+                    this.scheduleLoop();
+                }
+                showToast(`المقطوعة: ${chosen.name}`);
+            }
+
+            syncButtonUI() {
+                const btn = document.getElementById('musicBtn');
+                const label = document.getElementById('musicLabel');
+                if (this.isPlaying) {
+                    btn.classList.add('is-playing');
+                    label.textContent = 'الموسيقى تعمل';
+                } else {
+                    btn.classList.remove('is-playing');
+                    label.textContent = 'موسيقى هادئة';
+                }
+            }
+        }
+
+        const royalAudio = new RoyalAudioEngine();
+
+        function toggleMusic() {
+            royalAudio.toggle();
+        }
+
+        function switchMusicTheme() {
+            royalAudio.nextTheme();
+        }
+
+        // ================= ENVELOPE OPEN & REOPEN =================
+        function openLuxuryEnvelope() {
+            if (isEnvelopeOpened) return;
+            isEnvelopeOpened = true;
+
+            // Start calm celebratory music immediately on user tap
+            royalAudio.start();
+
+            const env = document.getElementById('luxuryEnvelope');
+            env.classList.add('is-opened');
+
+            launchGoldSparklesBurst();
+
+            setTimeout(() => {
+                const stageEnv = document.getElementById('stage-envelope');
+                const stageCards = document.getElementById('stage-cards');
+                const stageFooter = document.getElementById('stage-footer');
+
+                stageEnv.style.opacity = '0';
+                stageEnv.style.transform = 'scale(0.95)';
+
+                setTimeout(() => {
+                    stageEnv.classList.add('hidden');
+                    stageCards.classList.remove('hidden');
+                    stageCards.classList.add('flex');
+                    stageFooter.classList.remove('hidden');
+                    stageFooter.classList.add('flex');
+                    goToSlide(0, false);
+                }, 380);
+            }, 1250);
+        }
+
+        function reopenEnvelopeStage() {
+            isEnvelopeOpened = false;
+            royalAudio.playPageChime();
+
+            const env = document.getElementById('luxuryEnvelope');
+            const stageEnv = document.getElementById('stage-envelope');
+            const stageCards = document.getElementById('stage-cards');
+            const stageFooter = document.getElementById('stage-footer');
+
+            env.classList.remove('is-opened');
+            stageCards.classList.add('hidden');
+            stageCards.classList.remove('flex');
+            stageFooter.classList.add('hidden');
+            stageFooter.classList.remove('flex');
+
+            stageEnv.classList.remove('hidden');
+            setTimeout(() => {
+                stageEnv.style.opacity = '1';
+                stageEnv.style.transform = 'scale(1)';
+            }, 30);
+        }
+
+        document.getElementById('luxuryEnvelope').addEventListener('keydown', (e) => {
+            if (e.key === 'Enter' || e.key === ' ') {
+                e.preventDefault();
+                openLuxuryEnvelope();
+            }
+        });
+
+        // ================= AMBIENT SPARKLES & CONFETTI =================
+        window.addEventListener('load', () => {
+            initAmbientSparkles();
+            initEventCountdown();
+        });
+
+        function initAmbientSparkles() {
+            const container = document.getElementById('ambient-sparkles');
+            for (let i = 0; i < 22; i++) {
+                const dot = document.createElement('div');
+                dot.className = 'sparkle-dot';
+                const size = Math.random() * 4.5 + 2;
+                dot.style.width = `${size}px`;
+                dot.style.height = `${size}px`;
+                dot.style.left = `${Math.random() * 100}vw`;
+                dot.style.animationDuration = `${Math.random() * 11 + 9}s`;
+                dot.style.animationDelay = `${Math.random() * 8}s`;
+                container.appendChild(dot);
+            }
+        }
+
+        function launchGoldSparklesBurst() {
+            if (typeof confetti === 'function') {
+                confetti({
+                    particleCount: 65,
+                    spread: 75,
+                    origin: { y: 0.58 },
+                    colors: ['#fffbeb', '#f5d77f', '#d4af37', '#b88b24']
+                });
+            }
+        }
+
+        // ================= SLIDE NAVIGATION (BUTTONS, DOTS, KEYS, SWIPE) =================
+        function goToSlide(index, withSound = true) {
+            if (index < 0 || index >= TOTAL_SLIDES) return;
+
+            for (let i = 0; i < TOTAL_SLIDES; i++) {
+                const panel = document.getElementById(`slide-${i}`);
+                const dot = document.getElementById(`nav-dot-${i}`);
+                if (panel) panel.classList.remove('is-active');
+                if (dot) {
+                    dot.className = 'h-2.5 w-2.5 rounded-full bg-gold-400/35 hover:bg-gold-400/65 transition-all duration-300';
+                }
+            }
+
+            currentSlide = index;
+            const activePanel = document.getElementById(`slide-${currentSlide}`);
+            const activeDot = document.getElementById(`nav-dot-${currentSlide}`);
+            if (activePanel) activePanel.classList.add('is-active');
+            if (activeDot) {
+                activeDot.className = 'h-2.5 w-8 rounded-full bg-gold-300 transition-all duration-300';
+            }
+
+            document.getElementById('slide-index-label').textContent = currentSlide + 1;
+            if (withSound) royalAudio.playPageChime();
+        }
+
+        function nextSlide() {
+            if (currentSlide < TOTAL_SLIDES - 1) goToSlide(currentSlide + 1);
+        }
+
+        function prevSlide() {
+            if (currentSlide > 0) goToSlide(currentSlide - 1);
+        }
+
+        document.addEventListener('keydown', (e) => {
+            if (!isEnvelopeOpened) return;
+            if (['INPUT', 'TEXTAREA'].includes(document.activeElement.tagName)) return;
+            if (e.key === 'ArrowLeft') nextSlide();
+            if (e.key === 'ArrowRight') prevSlide();
+        });
+
+        let swipeStartX = 0;
+        let swipeEndX = 0;
+        const cardsContainer = document.getElementById('stage-cards');
+
+        cardsContainer.addEventListener('touchstart', (e) => {
+            swipeStartX = e.changedTouches[0].screenX;
+        }, { passive: true });
+
+        cardsContainer.addEventListener('touchend', (e) => {
+            swipeEndX = e.changedTouches[0].screenX;
+            const deltaX = swipeEndX - swipeStartX;
+            if (deltaX > 55) nextSlide();
+            else if (deltaX < -55) prevSlide();
+        }, { passive: true });
+
+        // ================= COUNTDOWN TO 27/11/2026 AT 12:00 PM =================
+        function initEventCountdown() {
+            const targetTimestamp = new Date('2026-11-27T12:00:00+03:00').getTime();
+
+            function tickCountdown() {
+                const now = Date.now();
+                const diff = targetTimestamp - now;
+
+                if (diff <= 0) {
+                    ['cd-days', 'cd-hours', 'cd-mins', 'cd-secs'].forEach(id => {
+                        const el = document.getElementById(id);
+                        if (el) el.textContent = '00';
+                    });
+                    return;
+                }
+
+                const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+                const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
+                const mins = Math.floor((diff / (1000 * 60)) % 60);
+                const secs = Math.floor((diff / 1000) % 60);
+
+                document.getElementById('cd-days').textContent = String(days).padStart(2, '0');
+                document.getElementById('cd-hours').textContent = String(hours).padStart(2, '0');
+                document.getElementById('cd-mins').textContent = String(mins).padStart(2, '0');
+                document.getElementById('cd-secs').textContent = String(secs).padStart(2, '0');
+            }
+
+            tickCountdown();
+            setInterval(tickCountdown, 1000);
+        }
+
+        // ================= CALENDAR (.ICS) & COPY HELPERS =================
+        function downloadCalendarEvent() {
+            const icsContent = [
+                'BEGIN:VCALENDAR',
+                'VERSION:2.0',
+                'PRODID:-//Al Mashriq University//Graduation Invitation//AR',
+                'BEGIN:VEVENT',
+                `SUMMARY:حفل تخرج ${GRADUATE_NAME} - ${UNIVERSITY_NAME}`,
+                `DESCRIPTION:دعوة لحضور حفل تخرج ${GRADUATE_NAME} من ${UNIVERSITY_NAME} في ${VENUE_NAME}.`,
+                `LOCATION:${VENUE_NAME}`,
+                'DTSTART:20261127T090000Z',
+                'DTEND:20261127T120000Z',
+                'END:VEVENT',
+                'END:VCALENDAR'
+            ].join('\r\n');
+
+            const blob = new Blob([icsContent], { type: 'text/calendar;charset=utf-8' });
+            const link = document.createElement('a');
+            link.href = URL.createObjectURL(blob);
+            link.download = 'Graduation-Maan-Taha-Al-Essawi.ics';
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+            URL.revokeObjectURL(link.href);
+
+            showToast('تم تجهيز ملف التقويم (27/11/2026 • 12:00 ظهراً)');
+        }
+
+        function copyTextFallback(text, successMsg) {
+            const helper = document.createElement('textarea');
+            helper.value = text;
+            helper.setAttribute('readonly', '');
+            helper.style.position = 'fixed';
+            helper.style.opacity = '0';
+            document.body.appendChild(helper);
+            helper.select();
+            helper.setSelectionRange(0, 999999);
+
+            try {
+                document.execCommand('copy');
+                showToast(successMsg);
+            } catch (err) {
+                showToast('يرجى النسخ يدوياً من المتصفح');
+            }
+
+            document.body.removeChild(helper);
+        }
+
+        function copyEventDetails() {
+            const details = [
+                `🎓 حفل تخرج: ${GRADUATE_NAME}`,
+                `🏛️ الجامعة: ${UNIVERSITY_NAME}`,
+                `📅 الموعد: ${EVENT_DATE_TEXT}`,
+                `🕛 الوقت: ${EVENT_TIME_TEXT}`,
+                `📍 المكان: ${VENUE_NAME}`
+            ].join('\n');
+
+            copyTextFallback(details, 'تم نسخ تفاصيل الحفل بنجاح');
+        }
+
+        function copyFormattedCard() {
+            const cardText = [
+                `✨ دعوة خاصة للاحتفاء بالتخرج ✨`,
+                `يسرّني دعوتكم لمشاركتي فرحة التخرج:`,
+                `🎓 الخريج: ${GRADUATE_NAME}`,
+                `🏛️ الجامعة: ${UNIVERSITY_NAME}`,
+                `📅 التاريخ: ${EVENT_DATE_TEXT}`,
+                `🕛 الوقت: ${EVENT_TIME_TEXT}`,
+                `📍 المكان: ${VENUE_NAME}`,
+                `نلقاكم على خير ومحبّة 🤍`
+            ].join('\n');
+
+            copyTextFallback(cardText, 'تم نسخ بطاقة الدعوة كرسالة مرتبة');
+        }
+
+        // ================= WHATSAPP CONGRATULATIONS & LINK SHARING =================
+        function setWishText(msg) {
+            const textarea = document.getElementById('wishTextarea');
+            textarea.value = msg;
+            textarea.focus();
+            royalAudio.playPageChime();
+        }
+
+        function sendToWhatsApp() {
+            const sender = document.getElementById('senderNameInput').value.trim();
+            const wish = document.getElementById('wishTextarea').value.trim();
+
+            if (!wish) {
+                showToast('يرجى كتابة عبارة تهنئة أولاً');
+                document.getElementById('wishTextarea').focus();
+                return;
+            }
+
+            let text = `🎓 *تهنئة حفل تخرج - ${GRADUATE_NAME}* 🎓\n`;
+            text += `*${UNIVERSITY_NAME}*\n\n`;
+            text += `${wish}\n`;
+            if (sender) {
+                text += `\n💌 *المهنّئ:* ${sender}`;
+            }
+
+            const url = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(text)}`;
+            launchGoldSparklesBurst();
+            showToast('جارٍ فتح واتساب لإرسال التهنئة...');
+
+            setTimeout(() => {
+                window.open(url, '_blank', 'noopener,noreferrer');
+            }, 350);
+        }
+
+        function shareOrCopyLink() {
+            const shareUrl = window.location.href;
+            const shareTitle = `دعوة حفل تخرج ${GRADUATE_NAME} - ${UNIVERSITY_NAME}`;
+
+            if (navigator.share) {
+                navigator.share({
+                    title: shareTitle,
+                    text: `دعوة لحضور حفل تخرج ${GRADUATE_NAME} من ${UNIVERSITY_NAME} في ${VENUE_NAME} يوم الجمعة 27/11/2026 الساعة 12:00 ظهراً`,
+                    url: shareUrl
+                }).then(() => {
+                    showToast('تمت مشاركة رابط الدعوة بنجاح');
+                }).catch(() => {
+                    copyTextFallback(shareUrl, 'تم نسخ رابط الدعوة لمشاركته');
+                });
+            } else {
+                copyTextFallback(shareUrl, 'تم نسخ رابط الدعوة لمشاركته');
+            }
+        }
+
+        // ================= TOAST NOTIFICATION =================
+        let toastTimer;
+        function showToast(message) {
+            const toast = document.getElementById('luxury-toast');
+            const label = document.getElementById('toast-message');
+            label.textContent = message;
+
+            toast.classList.remove('opacity-0', 'translate-y-2');
+            toast.classList.add('opacity-100', 'translate-y-0');
+
+            clearTimeout(toastTimer);
+            toastTimer = setTimeout(() => {
+                toast.classList.remove('opacity-100', 'translate-y-0');
+                toast.classList.add('opacity-0', 'translate-y-2');
+            }, 3000);
+        }
+    </script>
+</body>
+</html>
